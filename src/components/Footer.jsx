@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <div>
-            <div className="flex justify-between pb-5">
+            <div className="flex justify-between pb-5 mt-10">
                 <div  className="flex flex-col">
                     <h1 className="text-2xl font-semibold">Job Portal Website</h1>
                     <p>Find the new job.</p>
