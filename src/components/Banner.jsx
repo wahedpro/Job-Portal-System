@@ -2,7 +2,6 @@ import { CiLocationOn } from "react-icons/ci";
 import { CgMenuGridO } from "react-icons/cg";
 import { BiCategory } from "react-icons/bi";
 import { IoSearchSharp } from "react-icons/io5";
-import { motion } from "motion/react"
 
 
 const Banner = () => {

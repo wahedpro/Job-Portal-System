@@ -1,7 +1,11 @@
 import {  useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut,  } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut,  } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
+
+
+const googleProvider = new GoogleAuthProvider();
+
 
 const AuthProvider = ({children}) => {
     
@@ -26,7 +30,13 @@ const AuthProvider = ({children}) => {
         return signOut(auth);
     }
 
-    // hold the user
+    // sign in with the google
+    const signWithGoogle= ()=>{
+        setLoading(true);
+        return signInWithPopup(auth,googleProvider);
+    }
+
+    // hold on the user information
     useEffect(()=>{
         const unsubscribe =  onAuthStateChanged(auth, currentUser=>{
             setUser(currentUser);
@@ -43,6 +53,7 @@ const AuthProvider = ({children}) => {
         createUser,
         loginUser,
         logoutUser,
+        signWithGoogle,
     }
     return (
         <AuthContext.Provider value={authInfo}>

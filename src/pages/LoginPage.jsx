@@ -8,7 +8,7 @@ import AuthContext from "../context/AuthContext";
 
 const LoginPage = () => {
 
-    const {loginUser} = useContext(AuthContext);
+    const {loginUser,signWithGoogle} = useContext(AuthContext);
 
     const handleToLogin = e=>{
         e.preventDefault();
@@ -24,8 +24,16 @@ const LoginPage = () => {
             console.log(error.message);
         })
     }
+
+    const loginWithGoogle=()=>{
+        signWithGoogle()
+        .then(result => console.log(result))
+        .catch(error => console.log(error.message))
+    }
+
+
     return (
-        <div className="w-[50%] mx-auto">
+        <div className="w-[50%] mx-auto py-10">
             <div className="flex flex-col items-center gap-1 pb-5">
                 <p className="text-[#3C65F7]">Welcome Back!</p>
                 <h1 className="text-3xl font-semibold">Member Login</h1>
@@ -33,7 +41,7 @@ const LoginPage = () => {
             </div>
 
             <div className="flex flex-col gap-3">
-                <button className="py-2 border flex items-center justify-center gap-2"> <FcGoogle size={20}/>Login With Google</button>
+                <button onClick={loginWithGoogle} className="py-2 border flex items-center justify-center gap-2"> <FcGoogle size={20}/>Login With Google</button>
 
                 <div className="flex items-center gap-2 text-gray-600 text-sm py-5">
                     <span className="flex-grow border-t border-gray-300"></span>
