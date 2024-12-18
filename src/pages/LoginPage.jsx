@@ -31,16 +31,19 @@ const LoginPage = () => {
                 <h1 className="text-3xl font-semibold">Member Login</h1>
                 <h3 className="text-xl">Sign in to continue.</h3>
             </div>
+
+            <div className="flex flex-col gap-3">
+                <button className="py-2 border flex items-center justify-center gap-2"> <FcGoogle size={20}/>Login With Google</button>
+
+                <div className="flex items-center gap-2 text-gray-600 text-sm py-5">
+                    <span className="flex-grow border-t border-gray-300"></span>
+                    <p className="text-center">Or Continue with</p>
+                    <span className="flex-grow border-t border-gray-300"></span>
+                </div>
+            </div>
+
             <form onSubmit={handleToLogin}>
                 <div className="flex flex-col gap-3">
-                    
-                    <button className="py-2 border flex  items-center justify-center gap-2"> <FcGoogle size={20}/>Login With Google</button>
-
-                    <div className="flex items-center text-gray-600 text-sm py-5">
-                        <span className="flex-grow border-t border-gray-300"></span>
-                        <p className="text-center">Or Continue with</p>
-                        <span className="flex-grow border-t border-gray-300"></span>
-                    </div>
 
                     <label className="flex items-center gap-2 border pl-2">
                         <MdEmail size={20}/>

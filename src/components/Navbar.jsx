@@ -15,9 +15,9 @@ const Navbar = () => {
             console.log(e.message);
         })
     }
-
+    
     return (
-        <div className="flex justify-between items-center py-3 mb-5">
+        <div className="w-[85%] mx-auto flex justify-between items-center py-4">
             <NavLink to='/'><h1 className="text-2xl font-semibold">Job Portal</h1></NavLink>
             <div className="flex gap-3">
                 <NavLink to='/'>Home</NavLink>

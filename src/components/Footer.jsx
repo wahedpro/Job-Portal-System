@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (
-        <div>
+        <div className="w-[85%] mx-auto">
             <div className="flex justify-between pb-5 mt-10">
                 <div  className="flex flex-col">
                     <h1 className="text-2xl font-semibold">Job Portal Website</h1>
